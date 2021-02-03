@@ -34,6 +34,11 @@ h1 {
   padding: 50px;
 }
 
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
 a {
   color: var(--font-blue);
   width: fit-content;
@@ -64,6 +69,23 @@ hr {
 
 ul {
   font-size: 1.2rem;
+}
+
+li {
+  margin: 10px auto;
+}
+
+button {
+  background-color: var(--background);
+  border: 1px solid var(--font-green);
+  border-radius: 10px;
+  color: var(--font-green);
+  margin: 20px auto;
+}
+
+button:hover {
+  background-color: var(--font-green);
+  color: var(--background);
 }
 
 .hidden {
@@ -100,4 +122,27 @@ ul {
 .about {
   font-size: 1.2rem;
   margin: 20px auto;
+}
+
+.change {
+  font-size: 0.75rem;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pencil {
+  padding-top: 5px;
+  position: absolute;
+}
+
+.new {
+  border: 1px solid var(--font-blue);
+  border-radius: 20px;
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+}
+
+.choices {
+  margin: 10px auto;
 }

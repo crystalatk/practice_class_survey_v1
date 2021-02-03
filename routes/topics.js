@@ -9,7 +9,6 @@ const express = require('express'),
 
 router.get('/', async (req, res) => {
     const topicsData = await topicsModel.getAll();
-
     res.render('template', {
         locals: {
             title: "Topics I Have Learned",
@@ -20,5 +19,31 @@ router.get('/', async (req, res) => {
         }
     });
 });
+
+router.get('/change_response:id', async (req, res) => {
+    const { id } = req.params;
+    const topicsData = await topicsModel.getByID(id);
+    res.render('template', {
+        locals: {
+            title: "Change Response",
+            data: topicsData,
+        },
+        partials: {
+            body: "partials/change_response",
+        }
+    });
+});
+
+router.post('/:id', async (req, res) => {
+    const { id } = req.params;
+    const { topic_score } = req.body;
+    const topic = new topicsModel(id);
+    const response = await topic.changeEntry(topic_score);
+    if(response.rowCount >= 1) {
+        res.redirect('/topics')
+    } else {
+        res.sendStatus(500);
+    }
+})
 
 module.exports = router

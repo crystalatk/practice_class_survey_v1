@@ -4,5 +4,7 @@
     <a href="/"><img src="/images/code_focused.jpg" alt="Screen with code focused through glasses"></a>
 </section>
 <ul>
-    ${data.map(entry => `<li>${entry.name}: <span class="blue">${entry.ranking_score} - <span class="green">${entry.ranking_title}</span></li>`).join('')}
+    ${data.map(entry => `<li>${entry.name}: <span class="blue">${entry.ranking_score} - <span class="green">${entry.ranking_title}</span>
+    <span class="change">Change Response <a href="/topics/change_response${entry.id}"><img class="pencil" src="/images/pencil-fill.png" alt="pencil to edit" width="20px"></a></span></li>`).join('')}
 </ul>
+

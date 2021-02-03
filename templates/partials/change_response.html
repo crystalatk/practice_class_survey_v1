@@ -1,0 +1,36 @@
+<a href="/topics"><h1>${data.name}</h1></a>
+<hr>
+<div class="current green">
+    <h3>I am currently ${data.ranking_title} at ${data.name}.</h3>
+</div>
+<div class="new">
+    <p class="pink">My new rating for ${data.name} is: 
+        <form action="/topics/${data.id}" method="POST">
+            <div class="choices">
+                <input type="radio" id="Awesome" name="topic_score" value="1">
+                <label class="blue" for="Awesome">Awesome</label>
+            </div>
+            <div class="choices">
+                <input type="radio" id="Great" name="topic_score" value="2">
+                <label class="blue" for="Great">Great</label>
+            </div>
+            <div class="choices">
+                <input type="radio" id="Good" name="topic_score" value="3">
+                <label class="blue" for="Good">Good</label>
+            </div>
+            <div class="choices">
+                <input type="radio" id="Okay" name="topic_score" value="4">
+                <label class="blue" for="Okay">Okay</label>
+            </div>
+            <div class="choices">
+                <input type="radio" id="Poor" name="topic_score" value="5">
+                <label class="blue" for="Poor">Poor</label>
+            </div>
+            <div class="choices">
+                <input type="radio" id="Unranked" name="topic_score" value="6" checked>
+                <label class="blue" for="Unranked">Unranked</label>
+            </div>
+            <button type="submit">Submit Changes</button>
+        </form>
+    </p>
+</div>
