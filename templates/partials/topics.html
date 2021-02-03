@@ -4,5 +4,5 @@
     <a href="/"><img src="/images/code_focused.jpg" alt="Screen with code focused through glasses"></a>
 </section>
 <ul>
-    ${data.map(topic => `<li>${topic.name}: <span class="blue">${topic.ranking_score} - <span class="green">${topic.ranking_title}</span></li>`).join('')}
+    ${data.map(entry => `<li>${entry.name}: <span class="blue">${entry.ranking_score} - <span class="green">${entry.ranking_title}</span></li>`).join('')}
 </ul>
