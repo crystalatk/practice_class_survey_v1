@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
     res.render('template', {
         locals: {
-            title: "Topics I have Learned",
+            title: "Topics I Have Learned",
             data: topicsData,
         },
         partials: {
