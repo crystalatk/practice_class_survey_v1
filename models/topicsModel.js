@@ -9,7 +9,7 @@ class TOPICSModel {
     }
 
     static async getAll() {
-        const response = await db.any(`SELECT * FROM topics;`);
+        const response = await db.any(`SELECT * FROM topics INNER JOIN ranking_scale ON topics.topic_score = ranking_scale.id ORDER BY ranking_scale.ranking_score DESC;`);
         return response;
     }
 };

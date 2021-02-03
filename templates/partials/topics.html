@@ -1,4 +1,8 @@
 <h1>${title}</h1>
+<hr>
+<section>
+    <a href="/"><img src="/images/code_focused.jpg" alt="Screen with code focused through glasses"></a>
+</section>
 <ul>
-    ${data.map(topic => `<li>${topic.name}- ${topic.topic_score}</li>`).join('')}
+    ${data.map(topic => `<li>${topic.name}: <span class="blue">${topic.ranking_score} - <span class="green">${topic.ranking_title}</span></li>`).join('')}
 </ul>
