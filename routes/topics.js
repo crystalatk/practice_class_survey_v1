@@ -23,10 +23,13 @@ router.get('/', async (req, res) => {
 router.get('/change_response:id', async (req, res) => {
     const { id } = req.params;
     const topicsData = await topicsModel.getByID(id);
+    const statusData = await topicsModel.getAllStatuses();
+    console.log(statusData);
     res.render('template', {
         locals: {
             title: "Change Response",
-            data: topicsData,
+            topicsData,
+            statusData,
         },
         partials: {
             body: "partials/change_response",

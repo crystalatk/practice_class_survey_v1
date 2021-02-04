@@ -15,6 +15,11 @@ class TOPICSModel {
         return response;
     }
 
+    static async getAllStatuses() {
+        const response = await db.any(`SELECT * FROM ranking_scale;`);
+        return response;
+    }
+
     static async getByID(id) {
         const response = await db.one(`SELECT * FROM topics INNER JOIN ranking_scale ON topics.topic_score = ranking_scale.id_rank WHERE topics.id = '${id}';`);
         return response;
